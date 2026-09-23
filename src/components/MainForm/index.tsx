@@ -4,8 +4,14 @@ import { DefaultButton } from '../DefaultButton';
 import { DefaultInput } from '../DefaultInput';
 
 export function MainForn() {
+  type NewType = React.SubmitEvent<HTMLFormElement>;
+
+  function handleCreateNewTask(event: NewType) {
+    event.preventDefault();
+    console.log('DEU CERTO');
+  }
   return (
-    <form className='form' action=''>
+    <form onSubmit={handleCreateNewTask} className='form' action=''>
       <div className='formRow'>
         <DefaultInput
           labelText='task'
